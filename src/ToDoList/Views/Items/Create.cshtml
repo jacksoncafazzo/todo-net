@@ -2,24 +2,20 @@
     For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Create an item";
+
 }
 
 @model ToDoList.Models.Item
 
-<html>
-<head>
-    <title>To Do List - Create</title>
-</head>
-<body>
-    <h2>Create</h2>
-    <hr />
-    <h4>Add a new task</h4>
-    @using (Html.BeginForm())
-    {
-        @Html.LabelFor(model => model.Description)
-        @Html.TextBoxFor(model => model.Description)
-        <input type="submit" value="Add new task" />
-    }
-    <p>@Html.ActionLink("Back to list", "Index")</p>
-</body>
-</html>
+<h2>Create</h2>
+<hr />
+<h4>Add a new task</h4>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Description)
+    @Html.TextBoxFor(model => model.Description)
+    <input type="submit" value="Add new task" />
+}
+<p>@Html.ActionLink("Back to list", "Index")</p>

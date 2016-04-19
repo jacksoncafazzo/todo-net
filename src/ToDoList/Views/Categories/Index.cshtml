@@ -1,0 +1,18 @@
+﻿@model IEnumerable<ToDoList.Models.Category>
+
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Categories";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Hey there.</h2>
+<ul class="collection">
+    @foreach (var listItem in Model)
+    {
+        <li class="collection-item">@Html.DisplayFor(modelItem => listItem.Name)</li>
+    }
+    <li class="collection-item">@Html.ActionLink("Create", "Create", "Categories")</li>
+</ul>

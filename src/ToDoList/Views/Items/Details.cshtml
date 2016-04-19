@@ -2,29 +2,25 @@
     For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
+    ViewData["Title"] = "Item - Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @model ToDoList.Models.Item
 
-<html>
-<head>
-    <title>To Do List - Details</title>
-</head>
-<body>
-    <h2>Details</h2>
-    <hr />
-    @Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)
-    <p>@Html.ActionLink("Back to list", "Index")</p>
-    
-    @if (Model.Done)
-    {
-        <p>Task is done</p>
+<h2>Details</h2>
+<hr />
+<p>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</p>
+<p>@Html.DisplayNameFor(model => model.CategoryId) : @Html.DisplayFor(model => model.CategoryId)</p>
+<p>@Html.ActionLink("Edit", "Edit", new { id = Model.ItemId }) | @Html.ActionLink("Back to list", "Index")</p>
 
-    }
-    else
-    {
-        <p>Get on it</p>
+@if (Model.Done)
+{
+    <p>Task is done</p>
 
-    }
-</body>
-</html>
+}
+else
+{
+    <p>Get on it</p>
+
+}

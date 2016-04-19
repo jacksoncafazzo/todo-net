@@ -1,0 +1,21 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Create a category";
+
+}
+
+@model ToDoList.Models.Category
+
+<h2>Create</h2>
+<hr />
+<h4>Add a new category</h4>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name)
+    <input type="submit" value="Add new category" />
+}
+<p>@Html.ActionLink("Back to list", "Index")</p>

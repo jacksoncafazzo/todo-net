@@ -6,19 +6,20 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace ToDoList.Models
-{  
-        [Table("Items")]
-        public class Item
-        {
-            [Key]
-            public int ItemId { get; set; }
-            public string Description { get; set; }
-            public bool Done { get; set; }
+{
+    [Table("Items")]
+    public class Item
+    {
+        [Key]
+        public int ItemId { get; set; }
+
+        public string Description { get; set; }
+        public bool Done { get; set; }
+        public virtual Category Category { get; set; }
 
         //public void setDone(bool done = false)
         //{
-        //    Done = done; 
+        //    Done = done;
         //}
-        }
     }
-
+}
